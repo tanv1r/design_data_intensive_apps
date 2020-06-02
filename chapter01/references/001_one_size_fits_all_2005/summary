@@ -1,4 +1,11 @@
-In this 2005 paper, authors argue RDBMS is not suitable for data ware house and streaming applications. Traditional RDBMS is optimized for writes whereas data ware house applications shoud be read-optimized because they periodically pulls huge amount of data from different sources and complex analytic queries are then run offline. The database schema for warehouses or OLAP (online analytic processing app) looks like a star: a central facts table containing one row of info per event and many dimension tables containing details about the various field of facts; this star schema is not typical in OLTP (online transaction processing) using RDBMS. OLAP uses bit-map indexes and OLTP uses B-tree indexes.
-In a streaming application there are three main parts: (1) application server (2) data bus (3) storage - preferably all residing inside a single address space (single-process, multi-threaded). These apps can tolerate occational lost updates so do not require ACID guarantees.
+In this 2005 paper, authors argue RDBMS is not suitable for data ware house and streaming applications.
+Traditional RDBMS is optimized for writes whereas data ware house applications shoud be read-optimized because
+they periodically pulls huge amount of data from different sources and complex analytic queries are then run offline.
+The database schema for warehouses or OLAP (online analytic processing app) looks like a star: a central facts table containing
+one row of info per event and many dimension tables containing details about the various field of facts;
+this star schema is not typical in OLTP (online transaction processing) using RDBMS. OLAP uses bit-map indexes and OLTP uses B-tree indexes.
+In a streaming application there are three main parts. 
+(1) application server (2) data bus (3) storage - preferably all residing inside a single address space (single-process, multi-threaded).
+These apps can tolerate occational lost updates so do not require ACID guarantees.
 
 In short, the authors foresaw the rise of NoSQL aka not only SQL.
