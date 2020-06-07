@@ -3,8 +3,9 @@
 %\usepackage{concmath}
 %\usepackage[T1]{fontenc}
 %\usepackage{courier}
-\usepackage{lmodern}%
-\usepackage[T1]{fontenc}
+%\usepackage{lmodern}%
+%\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
 
 \begin{document}
 
@@ -31,7 +32,7 @@ These apps can tolerate occational lost updates so do not require ACID guarantee
 Heimerdinger. Walter, and Weinstock. Charles, "A Conceptual Framework for System Fault Tolerance," Software Engineering Institute, Carnegie Mellon University, Pittsburgh, Pennsylvania, Technical Report CMU/SEI-92-TR-033, 1992.
 }
 
-When a fault crosses the system boundary---therefore becomes user-visible---it is a failure. The fault floor is where region of concern ends. Fault trajectory is the sequence of faults that leads to a failure.
+In order to talk about fault tolerance, we need to agree on a fault vocabulary. When a fault crosses the system boundary---therefore becomes user-visible---it is a failure. The fault floor is where region of concern ends. Fault trajectory is the sequence of faults that leads to a failure.
 
 %\bibitem{latexcompanion} 
 %Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
