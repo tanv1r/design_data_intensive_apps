@@ -1,0 +1,52 @@
+\documentclass[10pt]{scrbook}
+
+%\usepackage{concmath}
+%\usepackage[T1]{fontenc}
+%\usepackage{courier}
+\usepackage{lmodern}%
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\begin{thebibliography}{9}
+
+\bibitem{}
+{\fontfamily{lmtt}\selectfont
+Michael Stonebraker, Ugur Çetintemel:
+"One Size Fits All": An Idea Whose Time Has Come and Gone (Abstract). ICDE 2005: 2-11
+}
+
+In this 2005 paper, authors argue RDBMS is not suitable for data ware house and streaming applications.
+Traditional RDBMS is optimized for writes whereas data ware house applications shoud be read-optimized because
+they periodically pulls huge amount of data from different sources and complex analytic queries are then run offline.
+The database schema for warehouses or OLAP (online analytic processing app) looks like a star: a central facts table containing
+one row of info per event and many dimension tables containing details about the various field of facts;
+this star schema is not typical in OLTP (online transaction processing) using RDBMS. OLAP uses bit-map indexes and OLTP uses B-tree indexes.
+In a streaming application there are three main parts. 
+(1) application server (2) data bus (3) storage - preferably all residing inside a single address space (single-process, multi-threaded).
+These apps can tolerate occational lost updates so do not require ACID guarantees. In short, the authors foresaw the rise of NoSQL aka not only SQL.
+
+\bibitem{}
+{\fontfamily{lmtt}\selectfont
+Heimerdinger. Walter, and Weinstock. Charles, "A Conceptual Framework for System Fault Tolerance," Software Engineering Institute, Carnegie Mellon University, Pittsburgh, Pennsylvania, Technical Report CMU/SEI-92-TR-033, 1992.
+}
+
+When a fault crosses the system boundary---therefore becomes user-visible---it is a failure. The fault floor is where region of concern ends. Fault trajectory is the sequence of faults that leads to a failure.
+
+%\bibitem{latexcompanion} 
+%Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+%\textit{The \LaTeX\ Companion}. 
+%Addison-Wesley, Reading, Massachusetts, 1993.
+%
+%\bibitem{einstein} 
+%Albert Einstein. 
+%\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+%[\textit{On the electrodynamics of moving bodies}]. 
+%Annalen der Physik, 322(10):891–921, 1905.
+%
+%\bibitem{knuthwebsite} 
+%Knuth: Computers and Typesetting,
+%\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\end{thebibliography}
+
+\end{document}
